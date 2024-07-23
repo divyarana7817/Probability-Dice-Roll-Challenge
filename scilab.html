@@ -1,0 +1,32 @@
+function [roll_result, success] = diceRollChallenge(min_value, max_value)
+    % Function to simulate a dice roll challenge
+    
+    % Generate a random dice roll between min_value and max_value
+    roll_result = randi([min_value, max_value]);
+    
+    % Check if the roll_result is between 2 and 5 (success condition)
+    if roll_result >= 2 && roll_result <= 5
+        success = true;
+    else
+        success = false;
+    end
+end
+
+// Main script
+// Define the range of the dice roll
+min_value = 1;
+max_value = 6;
+
+// Simulate the dice roll challenge
+[roll_result, success] = diceRollChallenge(min_value, max_value);
+
+// Display the result of the dice roll
+disp('Dice Roll Result:');
+disp(roll_result);
+
+// Display whether the challenge was successful or not
+if success
+    disp('Congratulations! You rolled between 2 and 5. Challenge successful!');
+else
+    disp('Sorry! You did not roll between 2 and 5. Challenge unsuccessful.');
+end
